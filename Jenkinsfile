@@ -41,7 +41,7 @@ pipeline {
 		stage('Push2DockerHub') {
 
 			steps {
-				sh "docker push rohitpotdar/helathcare-eta-app:latest"
+				sh "docker push rohitpotdar/healthcare-eta-app:latest"
 			}
 		}
         stage('Deploy to Kubernetes Dev Environment') {
