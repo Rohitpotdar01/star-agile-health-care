@@ -2,7 +2,7 @@ pipeline {
     agent { label 'slave-1' }	
 
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
+        // Install the Maven version configured as "M3" and add it to the path adding this line to check my webhook.
         maven "maven"
     }
 
