@@ -1,0 +1,20 @@
+- name: Deploy Healthcare App via Docker
+  hosts: testnodes
+  become: yes
+
+  tasks:
+    - name: Pull latest Docker image
+      community.docker.docker_image:
+        name: rohitpotdar/healthcare-eta-app
+        tag: latest
+        source: pull
+
+    - name: Run Docker Container
+      community.docker.docker_container:
+        name: healthcare_eta_app
+        image: rohitpotdar/healthcare-eta-app:latest
+        state: started
+        restart_policy: always
+        published_ports:
+          - "8084:8082"
+
